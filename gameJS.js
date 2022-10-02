@@ -27,21 +27,24 @@ let yc = Ycords.getContext("2d");
     yc.moveTo(250,0);
     yc.lineTo(250,500);
     yc.stroke(); 
-
+///////////////////////////////
 function Compare(){
-    let y4c = event.clientX -10
-    let x4c = event.clientY -10 
-    if(248<=y4c && y4c<252 ){
-        console.log("y4c")
-    }
-    if(248<=x4c && x4c<252){
-        console.log("x4c")
-    }
-    let xx = -x4c/50 + 5
-    let yy = y4c/50 - 5
-    document.getElementById("xAndy").innerHTML = yy.toFixed(1) +";"+ xx.toFixed(1)
-}
+    let x4c = event.clientX -10
+    let y4c = event.clientY -10 
 
+    let yy = -y4c/50 + 5
+    let xx = x4c/50 - 5
+
+    if(248<=x4c && x4c<252 ){
+        console.log(Math.round(yy))
+    }
+    if(248<=y4c && y4c<252){
+        console.log(Math.round(xx))
+    }
+    
+    document.getElementById("xAndy").innerHTML = xx.toFixed(1) +";"+ yy.toFixed(1)
+}
+//////////////////////////
 function FirstClick(){
     let x = event.clientX 
     let y = event.clientY
@@ -62,6 +65,7 @@ function secondClick(){
     let form = Math.sqrt(Math.pow(FDot.x1-SDot.x2, 2) + Math.pow(FDot.y1 - SDot.y2, 2))/50
     document.getElementById("q").innerHTML = form.toFixed(1)
 }
+////////////////////////
 function DeleteXY(){  
     location.reload()
 }
